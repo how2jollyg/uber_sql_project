@@ -51,6 +51,24 @@ FROM `uber-data1.dev_uber.tbl_analytics` ana
 LEFT JOIN CTE cte 
 ON ana.vendor_id = cte.vendor_id
 
+---Find total number of trips by passenger count---
+
+SELECT 
+  COUNT(*) as total_number,
+  passenger_count
+FROM `demo_uber.tbl_analytics`
+GROUP BY passenger_count
+ORDER BY passenger_count; 
+
+---Find top 10 pickup locations based on the number of trips---
+SELECT 
+  COUNT(*) AS total_number,
+  CONCAT(pickup_latitude,",",pickup_longitude) AS pickup_location
+FROM `demo_uber.tbl_analytics`
+GROUP BY pickup_latitude,pickup_longitude
+ORDER BY total_number
+LIMIT 10; 
+
 
 ---Find the latest timestamp for users who took at least one trip--
 --A retravailler 

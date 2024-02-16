@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `uber-data1.dev_uber.fact-table` (
+CREATE OR REPLACE TABLE `uber-data1.demo_uber.fact-table` (
 
     SELECT 
     trip_id AS STRING, 
@@ -18,17 +18,17 @@ CREATE OR REPLACE TABLE `uber-data1.dev_uber.fact-table` (
     improvement_surcharge AS STRING, 
     total_amount AS STRING
 
-    FROM `uber-data1.dev_uber.raw_table`
+    FROM `uber-data1.demo_uber.raw_table`
 
 ); 
 
-CREATE OR REPLACE TABLE `uber-data1.dev_uber.passenger_count_dim` (
+CREATE OR REPLACE TABLE `uber-data1.demo_uber.passenger_count_dim` (
     passenger_count_id STRING, 
     passenger_count STRING
 
 );
 
-CREATE OR REPLACE TABLE `uber-data1.dev_uber.trip_distance_dim` (
+CREATE OR REPLACE TABLE `uber-data1.demo_uber.trip_distance_dim` (
 
     trip_distance_id STRING,
     trip_distance STRING 
@@ -36,7 +36,7 @@ CREATE OR REPLACE TABLE `uber-data1.dev_uber.trip_distance_dim` (
 );
 
 
-CREATE OR REPLACE TABLE `uber-data1.dev_uber.rate_code_dim` (
+CREATE OR REPLACE TABLE `uber-data1.demo_uber.rate_code_dim` (
 
     rate_code_id INT64,
     RatecodeID INT64,
@@ -45,7 +45,7 @@ CREATE OR REPLACE TABLE `uber-data1.dev_uber.rate_code_dim` (
 );
 
 
-CREATE OR REPLACE TABLE `uber-data1.dev_uber.payment_type_dim` (
+CREATE OR REPLACE TABLE `uber-data1.demo_uber.payment_type_dim` (
 
     payment_type_id STRING,
     payment_type STRING,
@@ -54,7 +54,7 @@ CREATE OR REPLACE TABLE `uber-data1.dev_uber.payment_type_dim` (
 );
 
 
-CREATE OR REPLACE TABLE `uber-data1.dev_uber.datetime_dim` (
+CREATE OR REPLACE TABLE `uber-data1.demo_uber.datetime_dim` (
 
     datetime_id STRING,
     tpep_pickup_datetime STRING,
@@ -73,7 +73,7 @@ CREATE OR REPLACE TABLE `uber-data1.dev_uber.datetime_dim` (
 );
 
 
-CREATE OR REPLACE TABLE `uber-data1.dev_uber.pickup_location_dim` (
+CREATE OR REPLACE TABLE `uber-data1.demo_uber.pickup_location_dim` (
 
     pickup_location_id STRING, 
     pickup_latitude STRING, 
@@ -82,7 +82,7 @@ CREATE OR REPLACE TABLE `uber-data1.dev_uber.pickup_location_dim` (
 );
 
 
-CREATE OR REPLACE TABLE `uber-data1.dev_uber.dropoff_location_dim` (
+CREATE OR REPLACE TABLE `uber-data1.demo_uber.dropoff_location_dim` (
 
     dropoff_location_id STRING, 
     dropoff_latitude STRING, 

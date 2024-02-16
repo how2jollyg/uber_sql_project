@@ -1,0 +1,11 @@
+import io
+import pandas as pd
+import requests
+
+
+df = pd.read_csv('/Users/guilhemjolly/SQL_Queries/uber_sql_project-1/uber_data.csv', sep=',')
+
+df = df.drop_duplicates().reset_index(drop=True)
+df['trip_id'] = df.index
+
+df.to_csv('/Users/guilhemjolly/SQL_Queries/uber_sql_project-1/uber1.csv')
